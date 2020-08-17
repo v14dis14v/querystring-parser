@@ -134,7 +134,7 @@ def parse(query_string, unquote=True, normalized=False, encoding=DEFAULT_ENCODIN
     for element in query_string.split("&"):
         try:
             if unquote:
-                (var, val) = element.split("=")
+                (var, val) = element.split("=", 1)
                 if sys.version_info[0] == 2:
                   var = var.encode('ascii')
                   val = val.encode('ascii')
